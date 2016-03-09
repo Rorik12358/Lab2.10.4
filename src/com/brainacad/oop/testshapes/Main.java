@@ -51,5 +51,26 @@ public class Main {
         for (Drawable draw:arr2){
             draw.draw();
         }
+        System.out.println();
+        System.out.println("Lab 2.10.4:");
+        //Lab 2.10.4
+        try {
+            Rectangle rectangle2_10_4 = (Rectangle) Shape.parseShape("Rectangle:RED:10,20");
+            System.out.println(rectangle2_10_4);
+        } catch (InvalidShapeStringException e) {
+            e.printStackTrace();
+        }
+        try {
+            Triangle triangle2_10_4 = (Triangle) Shape.parseShape("Triangle:YELLOW:12,55,12");
+            System.out.println(triangle2_10_4);
+        } catch (InvalidShapeStringException e) {
+            e.printStackTrace();
+        }
+        try {
+            Circle circle2_10_4 = (Circle) Shape.parseShape("Circle:BLACK:29");
+            System.out.println(circle2_10_4);
+        } catch (InvalidShapeStringException e) {
+            e.printStackTrace();
+        }
     }
 }
