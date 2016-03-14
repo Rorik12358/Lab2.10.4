@@ -34,8 +34,8 @@ public abstract class Shape implements Drawable {
         }
         if (shape.equals("Triangle")) {
             String color = stringTokenizer.nextToken();
-            String aString = stringTokenizer.nextToken();
-            double a = Double.parseDouble(aString);
+            String aString = stringTokenizer.nextToken(); // you can concat this 2 lines
+            double a = Double.parseDouble(aString);       // and other in the same way
             String bString = stringTokenizer.nextToken();
             double b = Double.parseDouble(bString);
             String cString = stringTokenizer.nextToken();
