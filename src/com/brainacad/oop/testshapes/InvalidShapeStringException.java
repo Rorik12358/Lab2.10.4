@@ -5,6 +5,6 @@ package com.brainacad.oop.testshapes;
  */
 public class InvalidShapeStringException extends Exception {
     public InvalidShapeStringException() {
-        super("new ShapeException");
+        super("new ShapeException");     //very bad message. You can avoid of using any constructor
     }
 }
