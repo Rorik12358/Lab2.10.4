@@ -24,31 +24,27 @@ public abstract class Shape implements Drawable {
         String shape = stringTokenizer.nextToken();
         if (shape.equals("Rectangle")) {
             String color = stringTokenizer.nextToken();
-            String widthString = stringTokenizer.nextToken();
-            double width = Double.parseDouble(widthString);
-            String heightString = stringTokenizer.nextToken();
-            double height = Double.parseDouble(heightString);
+            double width = Double.parseDouble(stringTokenizer.nextToken()); // concatenated lines
+            double height = Double.parseDouble(stringTokenizer.nextToken()); // concatenated lines
             // Проверяем нет ли лишних параметров
             if (stringTokenizer.hasMoreTokens()) throw new InvalidShapeStringException();
             return new Rectangle(color, width, height);
         }
         if (shape.equals("Triangle")) {
             String color = stringTokenizer.nextToken();
-            String aString = stringTokenizer.nextToken(); // you can concat this 2 lines
-            double a = Double.parseDouble(aString);       // and other in the same way
-            String bString = stringTokenizer.nextToken();
-            double b = Double.parseDouble(bString);
-            String cString = stringTokenizer.nextToken();
-            double c = Double.parseDouble(cString);
+            double a = Double.parseDouble(stringTokenizer.nextToken()); // concatenated lines
+            double b = Double.parseDouble(stringTokenizer.nextToken()); // concatenated lines
+            double c = Double.parseDouble(stringTokenizer.nextToken()); // concatenated lines
             // Проверяем нет ли лишних параметров
             if (stringTokenizer.hasMoreTokens()) throw new InvalidShapeStringException();
             return new Triangle(color, a, b, c);
         } else {
             String color = stringTokenizer.nextToken();
-            String radiusString = stringTokenizer.nextToken();
-            double radius = Double.parseDouble(radiusString);
+            double radius = Double.parseDouble(stringTokenizer.nextToken()); // concatenated lines
             // Проверяем нет ли лишних параметров
-            if (stringTokenizer.hasMoreTokens()) throw new InvalidShapeStringException();
+            if (stringTokenizer.hasMoreTokens()){ 
+                throw new InvalidShapeStringException();
+            }
             return new Circle(color, radius);
         }
     }
